@@ -1,0 +1,28 @@
+<h1>All Plants</h1>
+
+<%= link_to 'Back to Main Page', root_path, class: 'btn btn-secondary' %><br>
+
+<br><%= link_to 'Add New Plant', new_plant_path, class: 'btn btn-primary' %><br>
+
+<br><table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>kind</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @plants.each do |plant| %>
+      <tr>
+        <td><%= plant.plantid %></td>
+        <td><%= plant.name %></td>
+        <td><%= plant.kind %></td>
+        <td>
+          <%= link_to 'Show', plant_path(plant), class: 'btn btn-secondary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

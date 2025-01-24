@@ -1,0 +1,34 @@
+<h1>Edit Plant</h1>
+
+<%= form_with model: @plant, local: true do |form| %>
+  <div>
+    <%= form.label :plantid %>
+    <%= form.number_field :plantid %>
+  </div>
+
+  <div>
+    <%= form.label :workerid %>
+    <%= form.collection_select :workerid, Worker.all, :id, :id, prompt: 'Select Worker ID' %>
+  </div>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :kind %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_delivery, 'Date of Delivery' %>
+    <%= form.date_select :date_of_delivery %>
+  </div>
+
+  <div>
+    <%= form.submit 'Update', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Cancel', plant_path(@plant), class: 'btn btn-secondary' %>

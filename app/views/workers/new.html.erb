@@ -10,7 +10,7 @@
 
   <div>
     <%= form.label :landid %>
-    <%= form.number_field :landid %>
+    <%= form.collection_select :landid, Land.all, :id, :id, prompt: 'Select Land ID' %>
   </div>
 
   <div>

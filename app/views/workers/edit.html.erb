@@ -1,0 +1,44 @@
+<h1>Edit Worker</h1>
+
+<%= form_with model: @worker, local: true do |form| %>
+  <div>
+    <%= form.label :workerid %>
+    <%= form.number_field :workerid %>
+  </div>
+
+  <div>
+    <%= form.label :landid %>
+    <%= form.collection_select :landid, Land.all, :id, :id, prompt: 'Select Land ID' %>
+  </div>
+
+  <div>
+    <%= form.label :surname %>
+    <%= form.text_field :surname %>
+  </div>
+
+  <div>
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div>
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div>
+    <%= form.label :workexperience, 'Work Experience (years)' %>
+    <%= form.number_field :workexperience %>
+  </div>
+
+  <div>
+    <%= form.label :post %>
+    <%= form.text_field :post %>
+  </div>
+
+  <div>
+    <%= form.submit 'Update', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Cancel', worker_path(@worker), class: 'btn btn-secondary' %>

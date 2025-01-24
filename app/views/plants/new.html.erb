@@ -1,0 +1,34 @@
+<h1>Add New Plant</h1>
+
+<%= link_to 'Back to All Plants', plants_path, class: 'btn btn-secondary' %>
+
+<%= form_with model: @plant, local: true do |form| %>
+  <div>
+    <%= form.label :plantid %>
+    <%= form.number_field :plantid %> <!-- поле для ввода plantid -->
+  </div>
+
+  <div>
+    <%= form.label :workerid %>
+    <%= form.collection_select :workerid, Worker.all, :id, :id, prompt: 'Select Worker ID' %>
+  </div>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %> <!-- поле для ввода имени растения -->
+  </div>
+
+  <div>
+    <%= form.label :kind %>
+    <%= form.text_field :kind %> <!-- поле для типа растения -->
+  </div>
+
+  <div>
+    <%= form.label :date_of_delivery %>
+    <%= form.date_select :date_of_delivery %> <!-- поле для выбора даты доставки -->
+  </div>
+
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>

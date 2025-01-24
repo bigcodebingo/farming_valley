@@ -1,0 +1,39 @@
+<h1>Edit Land</h1>
+
+<%= form_with model: @land, local: true do |form| %>
+  <div>
+    <%= form.label :landid %>
+    <%= form.number_field :landid %>
+  </div>
+
+  <div>
+    <%= form.label :agronomistid %>
+    <%= form.number_field :agronomistid %>
+  </div>
+
+  <div>
+    <%= form.label :square %>
+    <%= form.number_field :square %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :type_of_plant %>
+    <%= form.text_field :type_of_plant %>
+  </div>
+
+  <div>
+    <%= form.label :watering %>
+    <%= form.date_select :watering %>
+  </div>
+
+  <div>
+    <%= form.submit 'Update', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Cancel', land_path(@land), class: 'btn btn-secondary' %>

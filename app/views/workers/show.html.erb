@@ -1,0 +1,19 @@
+<h1>Worker Details</h1>
+
+<%= link_to 'Back to All Workers', workers_path, class: 'btn btn-secondary' %>
+
+<div class="worker-details">
+  <p><strong>Worker ID:</strong> <%= @worker.workerid %></p>
+  <p><strong>Land ID:</strong> <%= @worker.landid %></p>
+  <p><strong>Surname:</strong> <%= @worker.surname %></p>
+  <p><strong>Firstname:</strong> <%= @worker.firstname %></p>
+  <p><strong>Lastname:</strong> <%= @worker.lastname %></p>
+  <p><strong>Work Experience (years):</strong> <%= @worker.workexperience %></p>
+  <p><strong>Post:</strong> <%= @worker.post %></p>
+</div>
+
+<%= link_to 'Edit', edit_worker_path(@worker), class: 'btn btn-primary' %>
+<%= button_to 'Delete', worker_path(@worker), 
+              method: :delete, 
+              data: { confirm: 'Are you sure?' }, 
+              class: 'btn btn-danger' %>

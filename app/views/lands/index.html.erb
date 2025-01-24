@@ -1,0 +1,27 @@
+<h1>All Lands</h1>
+<%= link_to 'Back to Main Page', root_path, class: 'btn btn-secondary' %><br>
+
+
+<br><%= link_to 'Add New Land', new_land_path, class: 'btn btn-primary' %><br>
+
+<br><table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lands.each do |land| %>
+      <tr>
+        <td><%= land.landid %></td>
+        <td><%= land.status %></td>
+        <td>
+          <%= link_to 'Show', land_path(land), class: 'btn btn-secondary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,44 @@
+<h1>Add New Worker</h1>
+
+<%= link_to 'Back to All Workers', workers_path, class: 'btn btn-secondary' %>
+
+<%= form_with model: @worker, local: true do |form| %>
+  <div>
+    <%= form.label :workerid %>
+    <%= form.number_field :workerid %> 
+  </div>
+
+  <div>
+    <%= form.label :landid %>
+    <%= form.number_field :landid %>
+  </div>
+
+  <div>
+    <%= form.label :surname %>
+    <%= form.text_field :surname %>
+  </div>
+
+  <div>
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div>
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div>
+    <%= form.label :workexperience, 'Work Experience (years)' %>
+    <%= form.number_field :workexperience %>
+  </div>
+
+  <div>
+    <%= form.label :post %>
+    <%= form.text_field :post %>
+  </div>
+
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>

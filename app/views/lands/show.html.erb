@@ -1,0 +1,18 @@
+<h1>Land Details</h1>
+
+<%= link_to 'Back to All Lands', lands_path, class: 'btn btn-secondary' %>
+
+<div class="land-details">
+  <p><strong>ID:</strong> <%= @land.landid %></p>
+  <p><strong>Agronomist ID:</strong> <%= @land.agronomistid %></p>
+  <p><strong>Square:</strong> <%= @land.square %></p>
+  <p><strong>Status:</strong> <%= @land.status %></p>
+  <p><strong>Type of Plant:</strong> <%= @land.type_of_plant %></p>
+  <p><strong>Watering:</strong> <%= @land.watering %></p>
+</div>
+
+<%= link_to 'Edit', edit_land_path(@land), class: 'btn btn-primary' %>
+<%= button_to 'Delete', land_path(@land), 
+              method: :delete, 
+              data: { confirm: 'Are you sure?' }, 
+              class: 'btn btn-danger' %>

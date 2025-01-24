@@ -1,0 +1,28 @@
+<h1>All Workers</h1>
+
+<%= link_to 'Back to Main Page', root_path, class: 'btn btn-secondary' %><br>
+
+<br><%= link_to 'Add New Worker', new_worker_path, class: 'btn btn-primary' %><br>
+
+<br><table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>surname</th>
+      <th>firstname</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @workers.each do |worker| %>
+      <tr>
+        <td><%= worker.workerid %></td>
+        <td><%= worker.surname %></td>
+        <td><%= worker.firstname %></td>
+        <td>
+          <%= link_to 'Show', worker_path(worker), class: 'btn btn-secondary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

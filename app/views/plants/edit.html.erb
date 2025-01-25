@@ -1,34 +1,36 @@
-<h1>Edit Plant</h1>
+<h1>Изменить запись</h1>
 
-<%= form_with model: @plant, local: true do |form| %>
+<%= link_to 'Вернуться назад', plant_path(@plant), class: 'main-menu-btn' %>
+
+<%= form_with model: @plant, local: true, class: 'land-form' do |form| %>
   <div>
-    <%= form.label :plantid %>
+    <%= form.label :plantid, 'ID растения' %>
     <%= form.number_field :plantid %>
   </div>
 
   <div>
-    <%= form.label :workerid %>
+    <%= form.label :workerid, 'ID работника' %>
     <%= form.collection_select :workerid, Worker.all, :id, :id, prompt: 'Select Worker ID' %>
   </div>
 
   <div>
-    <%= form.label :name %>
+    <%= form.label :name, 'Название' %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :kind %>
+    <%= form.label :kind, 'Сорт' %>
     <%= form.text_field :kind %>
   </div>
 
   <div>
-    <%= form.label :date_of_delivery, 'Date of Delivery' %>
+    <%= form.label :date_of_delivery, 'Дата доставки' %>
     <%= form.date_select :date_of_delivery %>
   </div>
 
-  <div>
-    <%= form.submit 'Update', class: 'btn btn-primary' %>
-  </div>
+  <div style="text-align: center; width: 100%;">
+  <%= form.submit 'Сохранить', class: 'main-menu-btn' %>
+</div>
 <% end %>
 
-<%= link_to 'Cancel', plant_path(@plant), class: 'btn btn-secondary' %>
+

@@ -1,28 +1,27 @@
-<h1>All Plants</h1>
+<h1>Информация о растениях</h1>
 
-<%= link_to 'Back to Main Page', root_path, class: 'btn btn-secondary' %><br>
+<div class="button-container">
+<%= link_to 'Главное меню', root_path, class: 'btn btn-secondary main-menu-btn' %>
+<%= link_to 'Добавить запись', new_plant_path, class: 'btn btn-primary main-menu-btn' %>
+</div>
 
-<br><%= link_to 'Add New Plant', new_plant_path, class: 'btn btn-primary' %><br>
-
-<br><table border="1">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>kind</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @plants.each do |plant| %>
+<div class="lands-container">
+  <table class="land-table">
+    <thead>
       <tr>
-        <td><%= plant.plantid %></td>
-        <td><%= plant.name %></td>
-        <td><%= plant.kind %></td>
-        <td>
-          <%= link_to 'Show', plant_path(plant), class: 'btn btn-secondary' %>
-        </td>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Сорт</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @plants.each do |plant| %>
+        <tr onclick="window.location='<%= plant_path(plant) %>'" class="clickable-row">
+            <td><%= plant.plantid %></td>
+            <td><%= plant.name %></td>
+            <td><%= plant.kind %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+</div>

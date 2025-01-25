@@ -1,27 +1,27 @@
-<h1>All Lands</h1>
-<%= link_to 'Back to Main Page', root_path, class: 'btn btn-secondary' %><br>
+<h1>Информация об угодьях</h1>
 
+<div class="button-container">
+  <%= link_to 'Главное меню', root_path, class: 'btn btn-secondary main-menu-btn' %>
+  <%= link_to 'Добавить запись', new_land_path, class: 'btn btn-primary main-menu-btn' %>
+</div>
 
-<br><%= link_to 'Add New Land', new_land_path, class: 'btn btn-primary' %><br>
-
-<br><table border="1">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @lands.each do |land| %>
+<div class="lands-container">
+  <table class="land-table">
+    <thead>
       <tr>
-        <td><%= land.landid %></td>
-        <td><%= land.status %></td>
-        <td>
-          <%= link_to 'Show', land_path(land), class: 'btn btn-secondary' %>
-        </td>
+        <th>ID</th>
+        <th>Статус</th>
+        <th>Площадь</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @lands.each do |land| %>
+        <tr onclick="window.location='<%= land_path(land) %>'" class="clickable-row">
+          <td><%= land.landid %></td>
+          <td><%= land.status %></td>
+          <td><%= land.square %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

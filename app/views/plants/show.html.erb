@@ -1,17 +1,19 @@
-<h1>Plant Details</h1>
+<h1>Подробная информация</h1>
 
-<%= link_to 'Back to All Plants', plants_path, class: 'btn btn-secondary' %>
+<%= link_to 'Вернуться назад', plants_path, class: 'main-menu-btn' %>
 
-<div class="plant-details">
-  <p><strong>ID:</strong> <%= @plant.plantid %></p>
-  <p><strong>Worker ID:</strong> <%= @plant.workerid %></p>
-  <p><strong>Name:</strong> <%= @plant.name %></p>
-  <p><strong>Type:</strong> <%= @plant.kind %></p>
-  <p><strong>Date of Delivery:</strong> <%= @plant.date_of_delivery %></p>
+<div class="land-details">
+  <p class="description"><strong>ID:</strong> <%= @plant.plantid %></p>
+  <p class="description"><strong>ID работника:</strong> <%= @plant.workerid %></p>
+  <p class="description"><strong>Название:</strong> <%= @plant.name %></p>
+  <p class="description"><strong>Сорт:</strong> <%= @plant.kind %></p>
+  <p class="description"><strong>Дата доставки:</strong> <%= @plant.date_of_delivery %></p>
 </div>
 
-<%= link_to 'Edit', edit_plant_path(@plant), class: 'btn btn-primary' %>
-<%= button_to 'Delete', plant_path(@plant), 
+<div class="button-container">
+  <%= link_to 'Изменить', edit_plant_path(@plant), class: 'main-menu-btn' %>
+  <%= button_to 'Удалить', plant_path(@plant), 
               method: :delete, 
               data: { confirm: 'Are you sure?' }, 
-              class: 'btn btn-danger' %>
+              class: 'main-menu-btn' %>
+</div>

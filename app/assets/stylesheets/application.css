@@ -1,10 +1,280 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+.page-title {
+    font-family: 'Arial', sans-serif; /* Установка шрифта */
+    font-size: 76px; /* Размер шрифта */
+    text-align: center; /* Центрирование текста */
+    margin-top: 60px; /* Отступ снизу */  
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); 
+  }
+  
+  .page-description {
+    text-align: center; /* Центрирование текста */
+    font-size: 25px; /* Размер шрифта */
+    margin-top: 130px; /* Отступ снизу */
+    color: wheat;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .table-links {
+    display: flex; /* Flexbox для центрирования */
+    justify-content: center; /* Горизонтальное центрирование */
+    gap: 35px; /* Расстояние между кнопками */
+    margin-top: 70px;
+  }
+  
+  .table-links .btn {
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер текста кнопок */
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(/images/grass.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+  
+    
+  }
+  
+  /* Заголовки и важные элементы */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: wheat;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Использование другого шрифта для текста */
+  .text-regular {
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  /* Для других элементов, если нужно */
+  button, .btn, .link-button {
+    font-family: 'PT Sans', sans-serif;
+  }
+  /* Стиль для всех ссылок в блоке table-links */
+.table-links a {
+    color: wheat; /* Цвет текста */
+    text-decoration: none; /* Убирает подчеркивание */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    border: 2px solid transparent; /* Прозрачная граница для нормального состояния */
+    border-radius: 5px; /* Скругленные углы */
+    transition: all 0.3s ease; /* Плавные переходы */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Стиль для ссылок при наведении */
+  .table-links a:hover {
+    color: white; /* Цвет текста при наведении */
+    text-decoration: none; /* Подчеркивание при наведении */
+    background-color: wheat; /* Легкий фон */
+    border-color: wheat; /* Цвет границы при наведении */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень при наведении */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Стиль для ссылок при клике */
+  .table-links a:active {
+    color: #1abc9c; /* Цвет текста при клике */
+    background-color: white; /* Фон при клике */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень при клике */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .land-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .land-table thead tr {
+    background-color: #139526;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .land-table th,
+  .land-table td {
+    text-align: center;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+  }
+  
+  .land-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .land-table tbody tr:hover {
+    background-color: #bcfd9e;
+    cursor: pointer;
+  }
+  
+  .land-table td {
+    font-size: 16px;
+  }
+  
+  .land-table th {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 52px; 
+    gap: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.action-buttons .btn {
+    gap: 20px; 
+    
+}
+
+.main-menu-btn,
+.add-record-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid wheat; 
+}
+
+.main-menu-btn {
+    background-color: white;
+    color: wheat;
+}
+
+.main-menu-btn:hover {
+    background-color: wheat;
+    color: white;
+}
+
+.land-form {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+.land-form button {
+    all: unset; /* Сбрасывает все стили по умолчанию */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .land-form div {
+    margin-bottom: 20px;
+  }
+  
+  .land-form label {
+    display: block;
+    font-weight: bold;
+    /* margin-bottom: 8px; */
+    font-size: 14px;
+    color: #343a40;
+    width: 100%;
+  }
+  
+  .land-form input[type="text"],
+  .land-form input[type="number"],
+  .land-form select,
+  .land-form textarea {
+    width: 100%;
+    /* padding: 10px; */
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .land-form input[type="text"]:focus,
+  .land-form input[type="number"]:focus,
+  .land-form select:focus,
+  .land-form textarea:focus {
+    border-color: wheat;
+    outline: none;
+  }
+  
+  .land-form .btn {
+    width: 100%;
+    /* padding: 10px 20px; */
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .land-form .btn:hover {
+    background-color: #1cab0c;
+  }
+  
+  .land-form .btn-secondary {
+    background-color: #1cab0c;
+    margin-bottom: 20px;
+  }
+  
+  .land-form .btn-secondary:hover {
+    background-color: #1cab0c;
+  }
+  .land-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .land-details p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .land-details strong {
+    font-weight: bold;
+    color: #333;
+  }
+  .land-details p {
+    margin-bottom: 12px;
+  }
+  .button-container {
+    display: flex;
+    gap: 10px; /* Отступ между кнопками */
+    justify-content: center; /* Выравнивание по центру */
+    margin-top: 20px; /* Отступ сверху, если нужно */
+  }

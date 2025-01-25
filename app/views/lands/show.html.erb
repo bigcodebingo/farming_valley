@@ -1,18 +1,20 @@
-<h1>Land Details</h1>
+<h1>Подробная информация</h1>
 
-<%= link_to 'Back to All Lands', lands_path, class: 'btn btn-secondary' %>
+<%= link_to 'Вернуться назад', lands_path, class: 'main-menu-btn' %>
 
 <div class="land-details">
-  <p><strong>ID:</strong> <%= @land.landid %></p>
-  <p><strong>Agronomist ID:</strong> <%= @land.agronomistid %></p>
-  <p><strong>Square:</strong> <%= @land.square %></p>
-  <p><strong>Status:</strong> <%= @land.status %></p>
-  <p><strong>Type of Plant:</strong> <%= @land.type_of_plant %></p>
-  <p><strong>Watering:</strong> <%= @land.watering %></p>
+  <p class="description"><strong>ID:</strong> <%= @land.landid %></p>
+  <p class="description"><strong>ID агронома:</strong> <%= @land.agronomistid %></p>
+  <p class="description"><strong>Площадь:</strong> <%= @land.square %></p>
+  <p class="description"><strong>Статус:</strong> <%= @land.status %></p>
+  <p class="description"><strong>Вид растения:</strong> <%= @land.type_of_plant %></p>
+  <p class="description"><strong>Дата полива:</strong> <%= @land.watering %></p>
 </div>
 
-<%= link_to 'Edit', edit_land_path(@land), class: 'btn btn-primary' %>
-<%= button_to 'Delete', land_path(@land), 
-              method: :delete, 
-              data: { confirm: 'Are you sure?' }, 
-              class: 'btn btn-danger' %>
+<div class="button-container">
+  <%= link_to 'Изменить', edit_land_path(@land), class: 'main-menu-btn' %>
+  <%= button_to 'Удалить', land_path(@land), 
+                method: :delete, 
+                data: { confirm: 'Are you sure?' }, 
+                class: 'main-menu-btn' %>
+</div>

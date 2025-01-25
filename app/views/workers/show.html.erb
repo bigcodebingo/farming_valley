@@ -1,19 +1,21 @@
-<h1>Worker Details</h1>
+<h1>Подробная информация</h1>
 
-<%= link_to 'Back to All Workers', workers_path, class: 'btn btn-secondary' %>
+<%= link_to 'Вернуться назад', workers_path, class: 'main-menu-btn' %>
 
-<div class="worker-details">
-  <p><strong>Worker ID:</strong> <%= @worker.workerid %></p>
-  <p><strong>Land ID:</strong> <%= @worker.landid %></p>
-  <p><strong>Surname:</strong> <%= @worker.surname %></p>
-  <p><strong>Firstname:</strong> <%= @worker.firstname %></p>
-  <p><strong>Lastname:</strong> <%= @worker.lastname %></p>
-  <p><strong>Work Experience (years):</strong> <%= @worker.workexperience %></p>
-  <p><strong>Post:</strong> <%= @worker.post %></p>
+<div class="land-details">
+  <p class="description"><strong>ID:</strong> <%= @worker.workerid %></p>
+  <p class="description"><strong>ID угодия:</strong> <%= @worker.landid %></p>
+  <p class="description"><strong>Фамилия:</strong> <%= @worker.surname %></p>
+  <p class="description"><strong>Имя:</strong> <%= @worker.firstname %></p>
+  <p class="description"><strong>Отчество:</strong> <%= @worker.lastname %></p>
+  <p class="description"><strong>Стаж работы:</strong> <%= @worker.workexperience %></p>
+  <p class="description"><strong>Должность:</strong> <%= @worker.post %></p>
 </div>
 
-<%= link_to 'Edit', edit_worker_path(@worker), class: 'btn btn-primary' %>
-<%= button_to 'Delete', worker_path(@worker), 
+<div class="button-container">
+<%= link_to 'Изменить', edit_worker_path(@worker), class: 'main-menu-btn' %>
+<%= button_to 'Удалить', worker_path(@worker), 
               method: :delete, 
               data: { confirm: 'Are you sure?' }, 
-              class: 'btn btn-danger' %>
+              class: 'main-menu-btn' %>
+</div>

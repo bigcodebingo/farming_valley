@@ -1,13 +1,9 @@
-<h1>Main Page</h1>
+<h1 class="page-title">Farming Valley</h1>
 
-<p>Welcome to the management system! Choose a section to proceed:</p>
+<p class="page-description">Выберите таблицу для редактирования</p>
 
-<div>
-  <%= link_to 'Manage Lands', lands_path, class: 'btn btn-primary' %>
-</div>
-<div>
-  <%= link_to 'Manage Plants', plants_path, class: 'btn btn-success' %>
-</div>
-<div>
-  <%= link_to 'Manage Workers', workers_path, class: 'btn btn-warning' %>
+<div class="table-links">
+  <%= link_to 'Угодья', lands_path, class: 'btn btn-primary' %>
+  <%= link_to 'Растения', plants_path, class: 'btn btn-success' %>
+  <%= link_to 'Работники', workers_path, class: 'btn btn-warning' %>
 </div>
